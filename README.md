@@ -76,7 +76,7 @@ The sort order is defined by the barcode indices, lowest first.
  * Enhanced filtering options to remove ambiguous calls
 
 ## Latest Version
-Version **1.9.0**: [Full changelog here](#full-changelog)
+Version **1.10.0**: [Full changelog here](#full-changelog)
 
 ## Execution
 
