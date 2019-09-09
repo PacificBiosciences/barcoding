@@ -524,6 +524,9 @@ Sets the following options:
 If used in combination with `--isoseq`:
 `--peek 50000 --guess 75 --guess-min-count 100`.
 
+If used in combination with `--ccs`:
+`--peek 50000 --guess 75 --guess-min-count 10`.
+
 ### `--single-side`
 Identify barcodes in molecules that only have barcodes adjacent to one adapter.
 This approach makes no assumption about an alternating pattern of barcoded and
