@@ -1022,8 +1022,8 @@ HiFi pool:
 #### Experiment
 Use 2k ecoli amplicons with barcoded overhang adapters, symmetric. Workflow steps:
   1) Generate CCS
-  2) Demuxe subreads and whiteliste on CCS hole numbers
-  3) Demuxe CCS
+  2) Demux subreads and whitelist on CCS hole numbers
+  3) Demux CCS
   4) Compare both sets of hole numbers
 
 #### Results
