@@ -76,7 +76,7 @@ The sort order is defined by the barcode indices, lowest first.
  * Double demux to remove PCR primers after barcode demultiplexing
 
 ## Latest Version
-Version **2.0.0**: [Full changelog here](#full-changelog)
+Version **2.0.1**: [Full changelog here](#full-changelog)
 
 ## Execution
 
@@ -295,7 +295,7 @@ Example:
 
 ### Removed records
 Using the option `--dump-removed`, records that did not pass provided thresholds
-or are without barcodes, are stored in the file `prefix.lima.removed.bam`.
+or are without barcodes, are stored in the file `prefix.removed.bam`.
 
 ### DataSet
 One DataSet, SubreadSet or ConsensusReadset, is generated per output BAM file.
@@ -1103,7 +1103,9 @@ any parameters now, but worth future investigation.
 
 ## Full Changelog
 
- * **2.0.0**:
+ * **2.0.1**:
+   * Minor fixes
+ * 2.0.0:
    * Add support for FASTA and FASTQ
    * Fix `-k` with by-strand HiFi reads
  * 1.11.0:
