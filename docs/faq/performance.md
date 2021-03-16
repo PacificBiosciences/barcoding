@@ -4,7 +4,6 @@ parent: FAQ
 title: Performance
 ---
 
-# Performance
 ## Positive predictive values
 Performance is measured as positive predictive value (PPV); it measures TP/(TP+FP),
 the ratio of true positive calls over all true and false positive calls.
@@ -62,7 +61,8 @@ Examples for different barcoding schemes, (x) indicating use of a barcode pair:
 | G   |     |     |     |     |     |     | x   | x   |
 | H   |     |     |     |     |     |     |     | x   |
 
-
+### CLR
+#### PPV
 Following libraries contain 2kb amplicons with vector-sequence-specific primers amplified.
 Sequencing movies are 6 hours long with additional 2 hours pre-extension.
 The instrument version is 5.0.0 and the chemistry is S/P2-C2. For each ZMW,
@@ -85,7 +85,8 @@ all sequenced barcode regions were respected.
 2. Same barcode pair libraries have higher PPV than different barcode pair libraries.
 3. Mixing same and different barcode pairs in one library leads to very bad PPV and is *not supported*.
 
-## Yield
+#### Yield
+
 The yield is, after the PPV, the next most important metric. Lima removes unwanted
 barcode pairs that are undesired to increase PPV, accepting a decrease in yield.
 
@@ -102,3 +103,49 @@ ZMW as asymmetric, both flanking barcodes of an insert have to be observed;
 ZMWs whose polymerase read does not contain at least two adapters have to be
 removed. In contrast, for the symmetric case, it is sufficient to see a single
 barcode region.
+
+### HiFi
+A 96-plex barcoded adapter library with 2kb insert, 30 hour movie. `ccs` version
+5.0.0, `lima` version 2.0.0.
+
+Running `lima` with `--same --ccs`:
+
+```
+ZMWs input                (A) : 2045937
+ZMWs above all thresholds (B) : 1937358 (94.69%)
+ZMWs below any threshold  (C) : 108579 (5.31%)
+
+ZMW marginals for (C):
+Below min length              : 0 (0.00%)
+Below min score               : 0 (0.00%)
+Below min end score           : 0 (0.00%)
+Below min passes              : 0 (0.00%)
+Below min score lead          : 7651 (7.05%)
+Below min ref span            : 292 (0.27%)
+Without SMRTbell adapter      : 0 (0.00%)
+Undesired diff pairs          : 104029 (95.81%)
+```
+
+Following the raw numbers for the PPV/Yield curve below. Yield percentage is
+w.r.t. the `1937358` ZMWs from above. The initial 0.44% yield loss is due to
+how we process the data for PPV analaysis, requiring at least a 600 bp mapped to
+the originating reference.
+
+Without any filtering, PPV is at **99.96%** and with the recommended `--min-score 80`
+PPV increases to **99.992%** with an additional **2.2%** yield loss.
+
+| `--min-score` |   PPV    |   Yield   |
+| :-----------: | :------: | :-------: |
+|      25       | 99.9605% | 99.46948% |
+|      30       | 99.9606% | 99.46938% |
+|      40       | 99.962%  | 99.46794% |
+|      50       | 99.9709% | 99.44724% |
+|      60       | 99.9826% | 98.66581% |
+|      70       | 99.9886% | 98.05472% |
+|      80       | 99.9923% | 97.20697% |
+|      85       | 99.9955% | 94.53668% |
+|      90       | 99.9958% | 93.35735% |
+|      95       | 99.9961% | 91.39106% |
+|      100      | 99.9963% | 84.40582% |
+
+<img src="../img/ccs.yield_vs_ppv.png" width="1000px">
