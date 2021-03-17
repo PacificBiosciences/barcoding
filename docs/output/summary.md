@@ -46,22 +46,17 @@ how ZMWs many are *same/different*, and how many reads have been filtered.
 
 Explanation of each block:
 
-1) Number of ZMWs that went into lima,
-   how many ZMWs have been passed into the output file,
-   and how many did not qualify.
-
-2) For those ZMWs that did not qualify,
-   the marginal counts of each filter; each filter is explained in great detail
-   elsewhere in this document.
-
-3) For those ZMWs that passed, how many have been flagged as having a
-   *same* or *different* barcode pair. And what is the coefficient of variation
-   for the barcode ZMW yield distribution in percent.
-
-4) For all input ZMWs, how many allow calling a *same* or *different*
-   barcode pair. This a simplified version of, how many ZMWs have at least one
-   full pass to allow a *different* barcode pair call and how many ZMWs have
-   at least half an adapter, allowing a *same* barcode pair call.
-
-5) For those ZMWs that qualified, list the number of reads that are above and
-   below the provided `--min-length` threshold  (details see [here](#filter)).
+  1. Number of ZMWs that went into lima, how many ZMWs have been passed into the
+     output file, and how many did not qualify.
+  2. For those ZMWs that did not qualify, the marginal counts of each filter;
+     each filter is explained in great detail elsewhere in this document.
+  3. For those ZMWs that passed, how many have been flagged as having a *same*
+     or *different* barcode pair. And what is the coefficient of variation for
+     the barcode ZMW yield distribution in percent.
+  4. For all input ZMWs, how many allow calling a *same* or *different* barcode
+     pair. This a simplified version of, how many ZMWs have at least one full
+     pass to allow a *different* barcode pair call and how many ZMWs have at
+     least half an adapter, allowing a *same* barcode pair call.
+  5. For those ZMWs that qualified, list the number of reads that are above and
+     below the provided `--min-length` threshold  (details see
+     [here](#filter)).
