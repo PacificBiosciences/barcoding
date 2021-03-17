@@ -17,7 +17,7 @@ single-molecule sequencing data. It powers the Demultiplex Barcodes, Iso-Seq,
 and Mark PCR Duplicates GUI-based analysis applications.
 
 ## Availability
-The latest `lima` can be installed via the bioconda package `lima`.
+Latest version can be installed via bioconda package `lima`.
 
 Please refer to our [official pbbioconda page](https://github.com/PacificBiosciences/pbbioconda)
 for information on Installation, Support, License, Copyright, and Disclaimer.
@@ -29,15 +29,5 @@ Version **2.1.0**: [Full changelog here](/changelog)
 New documentation is up, a 1:1 port from the original GitHub docs with minor
 enhancements. Expect major enhancements in upcoming releases.
 
-## Execution
-**Input**: Subreads or HiFi reads from a single movie and barcodes in FASTA format.
-
-**Output**: Demultiplexed reads in a format inferred from the file extension.
-
-Run on a full movie with **symmetric** barcodes:
-
-    lima movie.hifi_reads.bam barcodes.fasta demux.bam --same --ccs --min-score 80
-
-Run on a full movie with **asymmetric** barcodes:
-
-    lima movie.hifi_reads.bam barcodes.fasta demux.bam --different --ccs --min-score 80
+## Get started
+If you are new to demultiplexing barcoded samples, check out the [Get Started guide](/get-started).
