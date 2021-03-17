@@ -4,8 +4,6 @@ parent: FAQ
 title: Output files
 ---
 
-# Output files
-
 *Lima* generates multiple output files per default, all starting with the same
 prefix as the output file, omitting suffixes `.bam`, `.subreadset.xml`, and
 `.consensusreadset.xml`. The report infix is `lima`.
@@ -187,3 +185,8 @@ One DataSet, SubreadSet or ConsensusReadset, is generated per output BAM file.
 
 ## PBI
 One PBI file is generated per output BAM file.
+
+## Can I limit the output files per directory?
+If you use output BAM splitting, it can happen that you get a lot of output files.
+Using `--files-per-directory N` creates subdirectories and outputs at most `N`
+barcodes per directory.

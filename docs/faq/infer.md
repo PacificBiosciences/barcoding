@@ -5,7 +5,6 @@ title: Infer
 ---
 
 # Advanced parameters to infer the used barcodes
-
 ## `--peek`
 The option `--peek N` allows to look at the first `N` ZMWs of the input and
 return the mean barcode score. This allows to test multiple test `barcode.fasta`
@@ -56,3 +55,10 @@ If used in combination with `--isoseq`:
 
 If used in combination with `--ccs`:
 `--peek 50000 --guess 75 --guess-min-count 10`.
+
+## `--peek-guess` does not work with XML input!
+If your input XML file contains `<BioSamples>`, lima will deactivate barcode
+inference via `--peek-guess` and only output barcodes specified in this section.
+The assumption is that you know exactly which barcodes have been used and need no
+inference. If this assumption is wrong, like the barcodes in the XML are wrong,
+you can either just use BAM as input or use `--ignore-biosamples`.

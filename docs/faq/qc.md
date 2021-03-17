@@ -4,7 +4,7 @@ parent: FAQ
 title: QC
 ---
 
-# `report_detail.R`
+# report_detail.R
 
 The first is for the `lima.report` file: `scripts/r/report_detail.R`. Example:
 
@@ -92,7 +92,7 @@ Number of adapters:
 
 <img src="../img/plots/detail_num_adapters.png" width="886px">
 
-# `report_summary.R`
+# report_summary.R
 The second script is for high-plex data in one `lima.report` file:
 `scripts/r/report_summary.R`.
 

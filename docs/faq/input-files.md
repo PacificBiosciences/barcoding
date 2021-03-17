@@ -4,8 +4,6 @@ parent: FAQ
 title: Input files
 ---
 
-# Input files
-
 ## Reads
 
 Input data is either CLR unaligned subreads, straight from a Sequel I/II, or
@@ -33,6 +31,10 @@ Example:
 Please name your barcodes with an alphabetic character prefix to avoid
 later confusion of barcode name and index. Duplicate names or sequences
 are not permitted.
+
+**Can I have upper- and lower-case bases in my barcodes?**\
+You can, but lima is case-insensitive and will convert them to upper case before
+the alignment step.
 
 # In- and output compatibility matrix:
 

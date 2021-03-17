@@ -1,25 +1,8 @@
 ---
 layout: default
 parent: FAQ
-title: Filter
+title: Filter - Scoring
 ---
-
-# Filter
-*Lima* offers a set of options for processing, including trivial and
- sophisticated filters.
-
-## `--min-length`
-Reads with length below `N` bp after demultiplexing are omitted. The default is
-`50`. ZMWs with no reads passing are omitted.
-
-## `--max-input-length`
-Reads with length above `N` bp are omitted for scoring in the demultiplexing
-step. The default is `0`, meaning deactivated.
-
-## `--min-score`
-Threshold for the average barcode score of the leading and trailing ends.
-ZMWs with barcode score below `N` are omitted. The default is `0`.
-It is advised to set it to `26` for CLR and `80` for HiFi.
 
 ## `--min-end-score`
 This threshold is applied to the two individual barcode scores, the leading and
@@ -58,13 +41,20 @@ the barcodes are 10 bp long and span with 4 bp and 8 bp. If we set
 one region is above the required reference span.
 <img src="../img/minrefspan.png" width="1000px">
 
-## `--min-passes`
-ZMWs with less than `N` full passes, a read with a leading and
-trailing adapter, are omitted. The default is `0`, no full-pass needed. Example
+## Why do most of my ZMWs get filtered by the score lead threshold?
+The score lead measures how close the best barcode call is to the second best.
+Possible solutions without seeing your data:
+ * Is that sample actually barcoded?
+ * Are your barcode sequences genetically too close for SMRT sequencing?
+   Try CCS calling first and demultiplex with `--ccs`.
+ * Are the synthesized products clean and not degenerate?
+ * Did the sequencing run perform optimally, is the accuracy in the expected range?
+ * Did you run lima twice, first on the original and then on the already
+   demultiplexed data? This is not supported, as the barcodes have been clipped
+   and removed.
 
-    0 pass  : insert - adapter - insert
-    1 pass  : insert - adapter - INSERT - adapter - insert
-    2 passes: insert - adapter - INSERT - adapter - INSERT - adapter - insert
+Try to decrease `--score-lead`, with the potential risk of introducing
+false positives.
 
 ## `--max-scored-barcode-pairs`
 Only use up to first `N` barcode pair regions for barcode identification.
@@ -90,42 +80,8 @@ with what it believes one adapter in the middle.
 Only use reads flanked by adapters on both sides for barcode identification,
 full-pass reads. This is implicit for CCS reads.
 
-## `--keep-idx-order`
-Per default, the two identified barcode idx are sorted ascending, as in CLR data,
-the correct order cannot be determined. This affects the `bc` tag, `prefix.counts`
-file, and `--split-bam` file names; `prefix.report` columns `IdxLowest`,
-`IdxHighest`, `IdxLowestNamed`, `IdxHighestNamed` will have the same order as
-`IdxFirst` and `IdxCombined`. This option only makes sense for single read data,
-such as CCS.
-
-If you are using an asymmetric barcode design with `NxN` pairs
-and your input is CCS, you can use `--keep-idx-order` to preserve
-the order. If your input is CLR subreads and you use `NxN` asymmetric pairs,
-there is no way to distinguish between pairs `bc1001--bc1002` and `bc1002--bc1001`.
-
 ## `--per-read`
 Score and tag per subread, instead per ZMW. This is implicit for CCS reads.
-
-## `--window-size-mult`
-The candidate region size multiplier: `barcode_length * multiplier`, default `3`.
-Optionally, you can specify the region size in base pairs with `--window-size-bp`.
-Window size has a direct impact on run time.
-
-Following a few examples, pay attention to the last one, where the barcode
-can't be fully identified.
-
-<img src="../img/windowsize.png" width="800px">
-
-## Alignment options
-
-    -A,--match-score        Score for a sequence match.
-    -B,--mismatch-penalty   Penalty for a mismatch.
-    -D,--deletion-penalty   Deletions penalty.
-    -I,--insertion-penalty  Insertion penalty.
-    -X,--branch-penalty     Branch penalty.
-
-## `--ccs`
-Set defaults to `-A 1 -B 4 -D 3 -I 3 -X 1`
 
 ## `--single-side`
 Identify barcodes in molecules that only have barcodes adjacent to one adapter.

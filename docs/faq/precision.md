@@ -1,10 +1,10 @@
 ---
 layout: default
 parent: FAQ
-title: Performance
+title: Precision
 ---
 
-## Positive predictive values
+## Positive predictive values / Precision
 Performance is measured as positive predictive value (PPV); it measures TP/(TP+FP),
 the ratio of true positive calls over all true and false positive calls.
 It informs us how much cross-calling has been observed between the desired

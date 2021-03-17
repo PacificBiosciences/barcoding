@@ -1,10 +1,8 @@
 ---
 layout: default
 parent: FAQ
-title: Implementation
+title: Barcode score
 ---
-
-# Implementation details
 
 ## Identify best matching barcode pair
 Let's explore how *lima* is processing and determining barcode hits.
@@ -146,3 +144,14 @@ After identifying the highest barcode score, it gets normalized:
 
 The range is between 0 and 100, whereas 0 is no hit and 100 perfect match.
 The provided mean score is the mean of both normalized barcode scores.
+
+## Which minimum barcode score?
+For CLR data, both, no threshold and `26` were tested extensively with
+downstream applications to assure that results are not convoluted by
+contaminants. A much lower threshold can be used, because additional internal
+filters in lima remove unreliable calls that go beyond simplistic `--min-score`
+thresholding.
+
+For HiFi data, it depends on the amount of contamination you are willing to accept.
+The recommended `--min-score 80` achieves a precision >99.99%. Without `--min-score` filtering
+precision is `>99.95%`. For more information, read the [FAQ about precision](/faq/precision).
