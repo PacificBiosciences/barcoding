@@ -18,8 +18,8 @@ Reads can be in following formats:
 |    HiFi    | unaligned PacBio BAM |    `<movie>.hifi_reads.bam`    |
 |    CLR     |         XML          |    `<movie>.subreadset.xml`    |
 | CCS / HiFi |         XML          | `<movie>.consensusreadset.xml` |
-| CCS / HiFi |   FASTA [opt gzip]   |      `<movie>.fasta[.gz]`      |
-| CCS / HiFi |   FASTQ [opt gzip]   |      `<movie>.fastq[.gz]`      |
+| CCS / HiFi |   FASTA [gzipped]    |      `<movie>.fasta[.gz]`      |
+| CCS / HiFi |   FASTQ [gzipped]    |      `<movie>.fastq[.gz]`      |
 
 ### Barcodes
 Barcodes have to be in FASTA format `<barcodes>.fasta`, one entry per barcode
@@ -36,6 +36,10 @@ agnostic (forward or reverse-complement, but **NOT** reversed). Example:
 Please name your barcodes with an alphabetic character prefix to avoid
 later confusion of barcode name and index. Duplicate names or sequences
 are not permitted.
+
+**Can I have upper- and lower-case bases in my barcodes?**\
+You can, but lima is case-insensitive and will convert them to upper case before
+the alignment step.
 
 ## Output
 

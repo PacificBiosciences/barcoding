@@ -1,8 +1,8 @@
 ---
 layout: default
-title: FAQ
-nav_order: 6
+title: Output files
 has_children: true
+nav_order: 5
 ---
 
 # FAQ

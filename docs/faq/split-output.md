@@ -21,3 +21,8 @@ files.
 ## How do barcode indices correspond to the input sequences?
 Input barcode sequences are tagged with an incrementing counter. The first
 sequence is barcode `0` and the last barcode `numBarcodes - 1`.
+
+## Can I limit the output files per directory?
+If you use output BAM splitting, it can happen that you get a lot of output files.
+Using `--files-per-directory N` creates subdirectories and outputs at most `N`
+barcodes per directory.

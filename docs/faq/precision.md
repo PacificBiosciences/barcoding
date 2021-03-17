@@ -68,17 +68,17 @@ Sequencing movies are 6 hours long with additional 2 hours pre-extension.
 The instrument version is 5.0.0 and the chemistry is S/P2-C2. For each ZMW,
 all sequenced barcode regions were respected.
 
-|   Design   | Plex | PPV % |
-| ---------- | ---- | ----- |
-| Symmetric  | 8    | 99.7  |
-|            | 16   | 99.7  |
-|            | 40   | 99.6  |
-|            | 48   | 99.5  |
-|            | 96   | 99.4  |
-|            | 384  | 99.1  |
-| Asymmetric | 28   | 98.8  |
-|            | 384  | 97.0  |
-| Sym+Asym   | 36   | 90.6  |
+|   Design   | Plex  | PPV % |
+| :--------: | :---: | :---: |
+| Symmetric  |   8   | 99.7  |
+|            |  16   | 99.7  |
+|            |  40   | 99.6  |
+|            |  48   | 99.5  |
+|            |  96   | 99.4  |
+|            |  384  | 99.1  |
+| Asymmetric |  28   | 98.8  |
+|            |  384  | 97.0  |
+|  Sym+Asym  |  36   | 90.6  |
 
 **Results:**
 1. With increasing number of barcodes, PPV decreases.
