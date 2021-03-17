@@ -56,6 +56,19 @@ Following additional auxilliary files are generated:
 
 Each output `.bam` file is accompanied by a `.bam.pbi` index file.
 
+## In- and output compatibility matrix:
+
+For CLR data, only XML and BAM are valid in- and output file types.
+
+For CCS / HiFi data, use following compatibility matrix:
+
+| In/Out | XML | BAM | FASTQ | FASTA |
+| :----: | :-: | :-: | :---: | :---: |
+| XML    | YES | YES |  YES  |  YES  |
+| BAM    | YES | YES |  YES  |  YES  |
+| FASTQ  | no  | no  |  YES  |  YES  |
+| FASTA  | no  | no  |  no   |  YES  |
+
 ## Example executions
 
 HiFi run from *BAM* with **symmetric** barcodes:
