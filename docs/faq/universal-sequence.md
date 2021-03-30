@@ -1,33 +1,25 @@
 ---
 layout: default
 parent: FAQ
-title: Iso-Seq
+title: Universal sequence
 ---
 
-## How can I demultiplex IsoSeq data?
-Even if you only want to remove IsoSeq primers, *lima* is the tool of choice.
+## What is a universal spacer sequence and how does it affect demultiplexing?
+For library designs that include an identical sequence between adapter
+and barcode, e.g. probe-based linear barcoded adapters samples,
+_lima_ offers a special mode that is activated if it finds a shared prefix
+sequence among all provided barcode sequences. Example:
 
-1) Remove all duplicate sequences.
-2) Annotate sequence names with a `5p` or `3p` suffix. Example:
+    >custombc1
+    ACATGACTGTGACTATCTCACACATATCAGAGTGCG
+    >custombc2
+    ACATGACTGTGACTATCTCAACACACAGACTGTGAG
 
-```
-    >primer_5p
-    AAGCAGTGGTATCAACGCAGAGTACATGGGG
-    >sample_brain_3p
-    AAGCAGTGGTATCAACGCAGAGTACCACATATCAGAGTGCG
-    >sample_liver_3p
-    AAGCAGTGGTATCAACGCAGAGTACACACACAGACTGTGAG
-```
+In this case, *lima* detects the shared prefix `ACATGACTGTGACTATCTCA` and
+removes it internally from all barcodes. Subsequently, it increases the
+window size by the length `L` of the prefix sequence.
+If `--window-size-bp N` is used, the actual window size is `L + N`.
+If `--window-size-mult M` is used, the actual window size is `(L + |bc|) * M`.
 
-3) Use the `--isoseq` mode. Run in combination with `--peek-guess` to remove spurious false positive.
-4) Output will be only different pairs with a `5p` and `3p` combination:
-
-```
-    demux.primer_5p--sample_brain_3p.bam
-    demux.primer_5p--sample_liver_3p.bam
-```
-
-Those options are very conservative to remove any spurious and ambiguous
-calls, in order to guarantee that only proper asymmetric (barcoded) primer
-are used in downstream analyses. Good libraries reach >75% CCS reads passing
-*lima* filters.
+Because the alignment is semi-global, a leading reference gap can be added
+without any penalty to the barcode score.
