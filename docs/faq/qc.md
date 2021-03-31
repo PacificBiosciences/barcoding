@@ -6,8 +6,9 @@ title: QC
 
 # QC R scripts
 
-Following R scripts are at https://github.com/PacificBiosciences/barcoding/tree/master/scripts/r
+Following R scripts can be found at [github.com/PacificBiosciences/barcoding/scripts/r](https://github.com/PacificBiosciences/barcoding/tree/master/scripts/r). Ensure that all R dependencies are installed
 
+    install.packages(c("ggplot2","dplyr","tidyr","viridis","scales","data"))
 ## report_detail.R
 
 The first is for the `lima.report` file: `report_detail.R`. Example:
