@@ -75,7 +75,7 @@ readLengthsUnnestedByBCZmw = report %>% filter(Barcoded) %>% filter(BarcodePair 
 barcodeCounts = report %>% filter(Barcoded) %>% filter(BarcodePair %in% unique_bps$BarcodePair) %>% count(BarcodePair)
 titration = report %>% filter(Barcoded) %>% filter(BarcodePair %in% unique_bps$BarcodePair) %>% select(BarcodePair, ScoreCombined) %>% group_by(BarcodePair) %>% arrange(BarcodePair,desc(ScoreCombined)) %>% count(BarcodePair,ScoreCombined) %>% mutate(cs = cumsum(n))
 titration$Filter = "NONE"
-titration_pass = report %>% filter(Barcoded, PassedFilters) %>% filter(BarcodePair %in% unique_bps$BarcodePair) %>% select(BarcodePair, ScoreCombined) %>% group_by(BarcodePair) %>% arrange(BarcodePair,desc(ScoreCombined)) %>% count(BarcodePair,ScoreCombined) %>% mutate(cs = cumsum(n))
+titration_pass = report %>% filter(Barcoded, PassedFilters == 1) %>% filter(BarcodePair %in% unique_bps$BarcodePair) %>% select(BarcodePair, ScoreCombined) %>% group_by(BarcodePair) %>% arrange(BarcodePair,desc(ScoreCombined)) %>% count(BarcodePair,ScoreCombined) %>% mutate(cs = cumsum(n))
 titration_pass$Filter = "PASS"
 
 readLengthsUnnested = report %>% select(ReadLengths, Barcoded) %>% unnest(ReadLengths)
