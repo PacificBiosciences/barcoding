@@ -7,6 +7,7 @@ nav_order: 99
 # Version changelog
 
  * **2.1.0**:
+   * SMRT Link v10.1 release
    * Do not allow double hyphen in barcode name
 
  * 2.0.1:
