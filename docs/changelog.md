@@ -7,10 +7,11 @@ nav_order: 99
 # Version changelog
 
  * **2.2.0**:
-   * Add --no-clip to assign a barcode pair, but not clip barcode sequences from reads
+   * Add `--no-clip` to assign a barcode pair, but not clip barcode sequences from reads
    * Output `.consensusreadset.xml` for CCS/HiFi input
-   * Add `--biosample-csv` to assign sample names to barcode pairs
+   * Add `--biosample-csv` to assign [bio sample names](/faq/biosample) to barcode pairs
    * Better help description for `--peek-guess` in combination with `--ccs` and `--isoseq`
+   * Optional [performance improvements](/faq/Speed)
 
  * 2.1.0:
    * SMRT Link v10.1 release
