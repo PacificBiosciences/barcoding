@@ -6,7 +6,13 @@ nav_order: 99
 
 # Version changelog
 
- * **2.1.0**:
+ * **2.2.0**:
+   * Add --no-clip to assign a barcode pair, but not clip barcode sequences from reads
+   * Output `.consensusreadset.xml` for CCS/HiFi input
+   * Add `--biosample-csv` to assign sample names to barcode pairs
+   * Better help description for `--peek-guess` in combination with `--ccs` and `--isoseq`
+
+ * 2.1.0:
    * SMRT Link v10.1 release
    * Do not allow double hyphen in barcode name
 
