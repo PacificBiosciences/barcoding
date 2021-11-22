@@ -6,7 +6,23 @@ nav_order: 99
 
 # Version changelog
 
- * **2.2.0**:
+ * **2.4.0**:
+   * Fix fasta/q input and `--guess`
+   * Output empty files for missing barcode pairs `--output-missing-pairs`
+   * Output each barcode into its own sub-directory `--split-subdirs`
+   * Passthrough of input ExternalResources in XML
+   * Add Provenance element to XML output
+   * Do not override Sample tag `SM` in read group if `--isoseq` is used
+   * Enable `--reuse-uuids` with `--biosample-csv`
+   * Add `--reuse-source-uuid` from input XML
+   * Store BioSamples under WellSample
+   * Allow `--dataset-name` to override dataset name attribute
+
+ * 2.3.0:
+   * SMRT Link v10.2 release
+   * Add `--preset` for `HIFI-SYMMETRIC` and `HIFI-ASYMMETRIC`
+
+ * 2.2.0:
    * Add `--no-clip` to assign a barcode pair, but not clip barcode sequences from reads
    * Output `.consensusreadset.xml` for CCS/HiFi input
    * Add `--biosample-csv` to assign [bio sample names](/faq/biosample) to barcode pairs
