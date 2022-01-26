@@ -1,9 +1,7 @@
-<p align="center">
-  <a href="https://lima.how/">
-    <img src="docs/img/lima_pb.png" alt="lima logo" width="400px"/>
-  </a>
-</p>
+<a href="https://lima.how/">
+  <img src="docs/img/lima_2022.png" alt="lima logo" width="200px" align="right"/>
+</a>
+<h1 align="center">lima - Demultiplex PacBio data</h1>
+<p align="center">Latest documentation on <a href="https://lima.how/">lima.how</a></p>
 
-<h2 align="center">lima - The PacBio Barcode Demultiplexer and Primer Remover</h1>
-
-<h2 align="center" style="border-bottom:none">New documentation on <a href="https://lima.how/">lima.how</a></h1>
+***
