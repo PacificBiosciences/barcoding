@@ -7,7 +7,7 @@ permalink: /
 ---
 
 <p align="center">
-  <img src="img/lima_card.png" alt="lima logo" width="650px"/>
+  <img src="img/lima_card_2022.png" alt="lima logo" width="650px"/>
 </p>
 
 ***
@@ -23,11 +23,11 @@ Please refer to our [official pbbioconda page](https://github.com/PacificBioscie
 for information on Installation, Support, License, Copyright, and Disclaimer.
 
 ## Latest Version
-Version **2.4.0**: [Full changelog here](/changelog)
+Version **2.5.0**: [Full changelog here](/changelog)
 
-## What's new!
-New documentation is up, a 1:1 port from the original GitHub docs with minor
-enhancements. Expect major enhancements in upcoming releases.
+## What's new
+ * Recommended parameters via [`--hifi-preset`](/faq/hifi-presets)
+ * Undo demultiplexing via [`lima-undo`](/faq/undo)
 
 ## Get started
 If you are new to demultiplexing barcoded samples, check out the [Get Started guide](/get-started).

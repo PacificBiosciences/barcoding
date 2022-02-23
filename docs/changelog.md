@@ -6,7 +6,17 @@ nav_order: 99
 
 # Version changelog
 
- * **2.4.0**:
+ * **2.5.0**:
+   * Upcoming SMRT Link release
+   * Add [`lima-undo` functionality](/faq/undo)
+   * Support methylation tag clipping
+   * Add progress and ETA for `--log-level INFO`
+   * Rename `--preset` to [`--hifi-preset`](/faq/hifi-presets)
+   * Add barcoded adapter `--hifi-preset SYMMETRIC-ADAPTERS`
+   * Fixes to support stranded HiFi BAM input
+   * Do not abort on empty input, but warn only
+
+ * 2.4.0:
    * Fix fasta/q input and `--guess`
    * Output empty files for missing barcode pairs `--output-missing-pairs`
    * Output each barcode into its own sub-directory `--split-subdirs`

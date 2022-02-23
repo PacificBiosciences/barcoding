@@ -22,3 +22,18 @@ relevant. Example:
 Provide this CSV to lima via `--biosample-csv input.csv`.
 
 This will associate the bio sample name to the read group using the `SM` tag.
+
+## UUID passthrough
+Since *lima* v2.5.0, the functionality has been enhanced to allow specifying
+UUIDs for the resulting XML files; for this, use `--reuse-uuids` in addition to
+the extended csv for `--biosample-csv`. Example:
+
+    Barcodes,UUID,Bio Sample
+    bc1001--bc1001,11111111-1111-1aaa-0111-111111111111,Alfred
+    bc1002--bc1002,22222222-2222-2bbb-8222-222222222222,Berthold
+    bc1003--bc1003,33333333-3333-3ccc-9222-333333333333,Constantin
+    bc1008--bc1008,e04f12c9-7b2e-45fd-ab49-1bc2f75d653a,Holger
+
+Ensure that the UUID matches the regex
+
+    [0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}

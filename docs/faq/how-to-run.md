@@ -20,18 +20,15 @@ Run on CCS / HiFi data:
     $ lima <movie>.ccs.bam <barcodes>.fasta <demux>.bam
     $ lima <movie>.consensusreadset.xml <barcodes>.barcodeset.xml <demux>.consensusreadset.xml
 
-If you do not need to import the demultiplexed data into SMRT Link, it is advised
-to use `--no-pbi`, omit the pbi index file, to minimize time to result.
-
 ### *Symmetric* or *Tailed* options
 
     CLR: --same
-    CCS: --same --ccs
+    CCS: --preset-hifi SYMMETRIC
 
 ### *Asymmetric* options
 
     CLR: --different
-    CCS: --different --ccs
+    CCS: --preset-hifi ASYMMETRIC
 
 ### Example execution
 

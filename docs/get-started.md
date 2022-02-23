@@ -73,11 +73,11 @@ For CCS / HiFi data, use following compatibility matrix:
 
 HiFi run from *BAM* with **symmetric** barcodes:
 
-    lima <movie>.hifi_reads.bam barcodes.fasta <movie>.demux.bam --same --ccs --min-score 80
+    lima <movie>.hifi_reads.bam barcodes.fasta <movie>.demux.bam --hifi-prefix SYMMETRICS
 
 HiFi run from *FASTQ* with **asymmetric** barcodes:
 
-    lima <movie>.hifi_reads.fq.gz barcodes.fasta <movie>.demux.fastq --different --ccs --min-score 80
+    lima <movie>.hifi_reads.fq.gz barcodes.fasta <movie>.demux.fastq --hifi-prefix ASYMMETRIC
 
 CLR run from *XML* with **symmetric** barcodes:
 
