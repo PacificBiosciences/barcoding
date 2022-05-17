@@ -6,7 +6,12 @@ nav_order: 99
 
 # Version changelog
 
- * **2.5.0**:
+ * **2.6.0**:
+   * Support SEGMENT read type
+   * Use final MM/ML basemod tags
+   * Bug fixes
+
+ * 2.5.0:
    * Upcoming SMRT Link release
    * Add [`lima-undo` functionality](/faq/undo)
    * Support methylation tag clipping
