@@ -74,6 +74,7 @@ For CCS / HiFi data, use following compatibility matrix:
 HiFi run from *BAM* with **symmetric** barcodes:
 
     lima <movie>.hifi_reads.bam barcodes.fasta <movie>.demux.bam --hifi-preset SYMMETRIC
+    
 HiFi run from *FASTQ* with **asymmetric** barcodes:
 
     lima <movie>.hifi_reads.fq.gz barcodes.fasta <movie>.demux.fastq --hifi-preset ASYMMETRIC
