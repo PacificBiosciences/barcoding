@@ -14,7 +14,7 @@ in addition they differ as following
 
 |        Preset        |              Definition               |
 | -------------------- | ------------------------------------- |
-| `SYMMMETRIC`         | `--same`                              |
+| `SYMMETRIC`          | `--same`                              |
 | `SYMMETRIC-ADAPTERS` | `--same --ignore-missing-adapters`    |
 | `ASYMMETRIC`         | `--different --min-scoring-regions 2` |
 
