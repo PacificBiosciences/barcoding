@@ -13,10 +13,10 @@ In this case, memory usage (RES column in top) is approximately the size of the
 input, uncompressed.
 
 The maximum concurrent output BAM file handles can be adjusted with
-`--bam-handles N`. The default is 500.
+`--bam-handles N` or `--output-handles N`. The default is 500.
 
 Examples, how memory usage is affected by `--bam-handles`. Option
-`--bam-handles-verbose` is only used to visualize the BAM output file handles.
+`--bam-handles-verbose` or `--output-handles-verbose` is only used to visualize the BAM output file handles.
 Memory usage reported using [memusg](https://gist.github.com/netj/526585):
 
     $ lima input.bam barcodes.fasta out.bam --same --split-bam --bam-handles 9 --bam-handles-verbose
