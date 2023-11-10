@@ -6,7 +6,13 @@ nav_order: 99
 
 # Version changelog
 
- * **2.6.0**:
+ * **2.9.0**:
+   * SMRT Link v13.0 release
+   * Add `--overwrite-biosample-name` option for double demux
+   * Add `sa`, `sm`, and `sx` tags
+   * Fixes for `--single-end` 
+
+ * 2.6.0:
    * Support SEGMENT read type
    * Use final MM/ML basemod tags
    * Bug fixes
