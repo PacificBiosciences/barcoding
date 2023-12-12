@@ -28,3 +28,9 @@ Those options are very conservative to remove any spurious and ambiguous
 calls, in order to guarantee that only proper asymmetric (barcoded) primer
 are used in downstream analyses. Good libraries reach >75% CCS reads passing
 *lima* filters.
+
+## Demultiplexing cDNA barcoded adapters after SMRTbell adapter-level demultiplexing
+[Iso-Seq](https://isoseq.how/clustering/cli-workflow.html#step-2---primer-removal-and-demultiplexing) 
+supports pooled cDNA barcoded analysis. If using barcoded cDNA primers after adapter-level demultiplexing, 
+add `--overwrite-biosample-names` to replace the [bio sample names](https://lima.how/faq/biosample.html) assigned during the first round of 
+demultiplexing. 
