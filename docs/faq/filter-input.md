@@ -14,7 +14,7 @@ step. The default is `0`, meaning deactivated.
 
 ## `--min-score`
 Threshold for the average barcode score of the leading and trailing ends.
-ZMWs with barcode score below `N` are omitted. The default is `0`.
+ZMWs with barcode score below or equal to `N` are omitted. The default is `0`.
 It is advised to set it to `26` for CLR and `80` for HiFi.
 
 ## `--min-passes`
