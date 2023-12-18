@@ -23,7 +23,7 @@ Please refer to our [official pbbioconda page](https://github.com/PacificBioscie
 for information on Installation, Support, License, Copyright, and Disclaimer.
 
 ## Latest Version
-Version **2.7.1**: [Full changelog here](/changelog)
+Version **2.9.0**: [Full changelog here](/changelog)
 
 ## What's new
  * Improved precision using [`--hifi-preset SYMMETRIC-ADAPTERS`](/faq/hifi-presets) or `SYMMETRIC`
