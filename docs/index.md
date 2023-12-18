@@ -13,8 +13,8 @@ permalink: /
 ***
 
 _lima_ is the standard tool to identify barcode and primer sequences in PacBio
-single-molecule sequencing data. It powers the Demultiplex Barcodes, Iso-Seq,
-and Mark PCR Duplicates GUI-based analysis applications.
+single-molecule sequencing data. It powers the _Demultiplex Barcodes_ GUI-based
+analysis applications.
 
 ## Availability
 Latest version can be installed via bioconda package `lima`.
