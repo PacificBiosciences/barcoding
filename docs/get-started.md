@@ -22,9 +22,13 @@ Reads can be in following formats:
 | CCS / HiFi |   FASTQ [gzipped]    |      `<movie>.fastq[.gz]`      |
 
 ### Barcodes
-Barcodes have to be in FASTA format `<barcodes>.fasta`, one entry per barcode
-sequence, **no duplicate** sequences, only upper-case bases, orientation
-agnostic (forward or reverse-complement, but **NOT** reversed). Example:
+Barcodes have to be in FASTA format `<barcodes>.fasta`:
+ - one entry per barcode sequence,
+ - **no duplicate** sequences,
+ - only upper-case bases,
+ - orientation agnostic (forward or reverse-complement, but **NOT** reversed).
+
+Example:
 
     >bc1000
     CTCTACTTACTTACTG
@@ -33,9 +37,10 @@ agnostic (forward or reverse-complement, but **NOT** reversed). Example:
     >bc1002
     AATATACCTATCATTA
 
-Please name your barcodes with an alphabetic character prefix to avoid
-later confusion of barcode name and index. Duplicate names or sequences
-are not permitted.
+Barcode name rules:
+ - please start with an alphabetic character prefix to avoid later confusion of barcode name and index,
+ - dashes are not allowed,
+ - **no duplicate** names.
 
 **Can I have upper- and lower-case bases in my barcodes?**\
 You can, but lima is case-insensitive and will convert them to upper case before
@@ -74,7 +79,7 @@ For CCS / HiFi data, use following compatibility matrix:
 HiFi run from *BAM* with **symmetric** barcodes:
 
     lima <movie>.hifi_reads.bam barcodes.fasta <movie>.demux.bam --hifi-preset SYMMETRIC
-    
+
 HiFi run from *FASTQ* with **asymmetric** barcodes:
 
     lima <movie>.hifi_reads.fq.gz barcodes.fasta <movie>.demux.fastq --hifi-preset ASYMMETRIC
