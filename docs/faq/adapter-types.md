@@ -59,5 +59,5 @@ A lower than ~40% percentage indicates decreased local accuracy during
 sequencing leading to adapter sequences not being found. If a high percentage
 of ZMWs is molecularly missing adapters, you should improve library prep.
 
-## How can I demultiplex data with one adapter only being barcoded?
+## How can I demultiplex data with one adapter only being barcoded in CLR data?
 Use `--single-side`.

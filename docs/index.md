@@ -26,7 +26,7 @@ for information on Installation, Support, License, Copyright, and Disclaimer.
 Version **2.9.0**: [Full changelog here](/changelog)
 
 ## What's new
- * Improved precision using [`--hifi-preset SYMMETRIC-ADAPTERS`](/faq/hifi-presets) or `SYMMETRIC`
+ * Increased HiFi preset precision by improving [`--single-end`](https://lima.how/faq/barcoded-adapter.html#what-is---single-end)
  * Undo demultiplexing via [`lima-undo`](/faq/undo)
 
 ## Get started
