@@ -6,7 +6,12 @@ nav_order: 99
 
 # Version changelog
 
- * **2.9.0**:
+ * **2.12.0**:
+   * SMRT Link v25.1 release
+   * Enable `fail_reads` input options
+   * Extended clipping support for `MM` and `ML` tags
+
+ * 2.9.0:
    * SMRT Link v13.0 release
    * Add `--overwrite-biosample-name` option for double demux
    * Add `sa`, `sm`, and `sx` tags
