@@ -6,7 +6,10 @@ nav_order: 99
 
 # Version changelog
 
- * **2.12.0**:
+ * **2.13.0**:
+   * Support for ultra-high memory Linux systems
+
+ * 2.12.0:
    * SMRT Link v25.1 release
    * Enable `fail_reads` input options
    * Extended clipping support for `MM` and `ML` tags
