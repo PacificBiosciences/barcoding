@@ -6,7 +6,11 @@ nav_order: 99
 
 # Version changelog
 
- * **2.13.0**:
+ * **26.2.1**:
+   * Add minimum input length filtering before demultiplexing
+   * Improve buffered handling for large sample pool demultiplexing
+
+ * 2.13.0:
    * Support for ultra-high memory Linux systems
 
  * 2.12.0:
